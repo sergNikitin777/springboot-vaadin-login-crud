@@ -46,7 +46,16 @@ public class MainView extends CustomComponent implements  View {
 		TabSheet tabSheet = new TabSheet();
 		tabSheet.setSizeFull();
 
-		VerticalLayout mainLayout = new VerticalLayout(actions, grid, editor);
+		VerticalLayout mainLayout = new VerticalLayout(actions, tabSheet, editor);
+
+
+		VerticalLayout verticalLayout = new VerticalLayout();
+		verticalLayout.setSizeFull();
+		tabSheet.addTab(verticalLayout, "First tab");
+		verticalLayout.addComponent(new Label("Example"));
+		verticalLayout.addComponent(new Button("Button"));
+
+		verticalLayout.addComponent(grid);
 
 		grid.setHeight(300, Unit.PIXELS);
 		grid.setColumns("id", "firstName", "lastName", "phone", "eMail");
