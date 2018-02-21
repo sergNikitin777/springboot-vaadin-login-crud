@@ -51,14 +51,21 @@ public class MainView extends CustomComponent implements  View {
 
 		VerticalLayout verticalLayout = new VerticalLayout();
 		verticalLayout.setSizeFull();
-		tabSheet.addTab(verticalLayout, "First tab");
-		verticalLayout.addComponent(new Label("Example"));
-		verticalLayout.addComponent(new Button("Button"));
 
+		VerticalLayout verticalLayout1 = new VerticalLayout();
+		verticalLayout1.setSizeFull();
+
+		tabSheet.addTab(verticalLayout, "Students tab");
+		tabSheet.addTab(verticalLayout1, "High charts tab");
+		//verticalLayout.addComponent(new Label("Example"));
+		//verticalLayout.addComponent(new Button("Button"));
+
+		verticalLayout.addComponent(actions);
 		verticalLayout.addComponent(grid);
 
 		grid.setHeight(300, Unit.PIXELS);
 		grid.setColumns("id", "firstName", "lastName", "phone", "eMail");
+		grid.setWidth(1000,Unit.PIXELS);
 
 		filter.setPlaceholder("Filter by last name");
 
