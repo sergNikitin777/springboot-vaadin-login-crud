@@ -1,5 +1,7 @@
 package com.fiskra.sample.vaadin.ui;
 
+import com.fiskra.sample.vaadin.ui.charts.AngularGauge;
+import com.vaadin.spring.annotation.SpringView;
 import com.vaadin.ui.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
@@ -54,6 +56,11 @@ public class MainView extends CustomComponent implements  View {
 
 		VerticalLayout verticalLayout1 = new VerticalLayout();
 		verticalLayout1.setSizeFull();
+
+        AngularGauge angularGauge = new AngularGauge();
+
+        verticalLayout1.addComponent(angularGauge);
+
 
 		tabSheet.addTab(verticalLayout, "Students tab");
 		tabSheet.addTab(verticalLayout1, "High charts tab");

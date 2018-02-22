@@ -1,5 +1,7 @@
 package com.fiskra.sample.vaadin.ui;
 
+import com.vaadin.spring.annotation.SpringUI;
+import com.vaadin.spring.annotation.SpringViewDisplay;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.fiskra.sample.vaadin.repo.StudentRepository;

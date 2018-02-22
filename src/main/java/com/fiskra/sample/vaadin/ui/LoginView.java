@@ -1,5 +1,6 @@
 package com.fiskra.sample.vaadin.ui;
 
+import com.vaadin.spring.annotation.SpringView;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.fiskra.sample.vaadin.model.User;
