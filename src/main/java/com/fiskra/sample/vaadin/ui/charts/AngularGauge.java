@@ -36,7 +36,7 @@ public class AngularGauge extends AbstractVaadinChartExample {
         configuration.getChart().setPlotBackgroundImage(null);
         configuration.getChart().setPlotBorderWidth(0);
         configuration.getChart().setPlotShadow(false);
-        configuration.setTitle("Speedometer");
+        configuration.setTitle("thermometr");
 
         GradientColor gradient1 = GradientColor.createLinear(0, 0, 0, 1);
         gradient1.addColorStop(0, new SolidColor("#FFF"));
@@ -68,7 +68,7 @@ public class AngularGauge extends AbstractVaadinChartExample {
         configuration.getPane().setBackground(background);
 
         YAxis yAxis = configuration.getyAxis();
-        yAxis.setTitle(new AxisTitle("km/h"));
+        yAxis.setTitle(new AxisTitle("fahrenheit"));
         yAxis.setMin(0);
         yAxis.setMax(200);
         yAxis.setMinorTickInterval("auto");
