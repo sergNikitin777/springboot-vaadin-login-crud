@@ -1,6 +1,6 @@
 package com.fiskra.sample.vaadin.ui;
 
-import com.fiskra.sample.vaadin.ui.charts.AngularGauge;
+import com.fiskra.sample.vaadin.ui.design.AppMenuDesign;
 import com.vaadin.spring.annotation.SpringView;
 import com.vaadin.ui.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +11,6 @@ import com.fiskra.sample.vaadin.repo.StudentRepository;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.server.FontAwesome;
-import com.vaadin.spring.annotation.SpringView;
 
 @SpringView(name = MainView.VIEW_NAME)
 public class MainView extends CustomComponent implements  View {
@@ -49,6 +48,11 @@ public class MainView extends CustomComponent implements  View {
 		tabSheet.setSizeFull();
 
 		VerticalLayout mainLayout = new VerticalLayout(actions, tabSheet);
+		AppMenuView appMenu = new AppMenuView();
+
+		UsersView usersView = new UsersView();
+
+		appMenu.content.addComponent(usersView);
 
 
 		VerticalLayout verticalLayout = new VerticalLayout();
@@ -56,10 +60,6 @@ public class MainView extends CustomComponent implements  View {
 
 		VerticalLayout verticalLayout1 = new VerticalLayout();
 		verticalLayout1.setSizeFull();
-
-        AngularGauge angularGauge = new AngularGauge();
-
-        verticalLayout1.addComponent(angularGauge);
 
 
 		tabSheet.addTab(verticalLayout, "Students tab");
@@ -77,7 +77,7 @@ public class MainView extends CustomComponent implements  View {
 
 		filter.setPlaceholder("Filter by last name");
 
-		setCompositionRoot(mainLayout);
+		setCompositionRoot(appMenu);
 
 		// Connect selected Student to editor or hide if none is selected
 		grid.asSingleSelect().addValueChangeListener(e -> {

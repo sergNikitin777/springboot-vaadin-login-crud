@@ -56,12 +56,6 @@
 			<scope>compile</scope>
 		</dependency>
 
-        <dependency>
-            <groupId>com.vaadin</groupId>
-            <artifactId>vaadin-charts</artifactId>
-            <version>4.0.1</version>
-			<scope>compile</scope>
-        </dependency>
 
 		<dependency>
 			<groupId>com.vaadin</groupId>
