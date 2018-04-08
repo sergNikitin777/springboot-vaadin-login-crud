@@ -52,7 +52,7 @@ public class MainView extends CustomComponent implements  View {
 
 		UsersView usersView = new UsersView();
 
-		appMenu.content.addComponent(usersView);
+		appMenu.getContentLayout().addComponent(usersView);
 
 
 		VerticalLayout verticalLayout = new VerticalLayout();
