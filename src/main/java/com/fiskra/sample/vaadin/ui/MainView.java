@@ -1,5 +1,6 @@
 package com.fiskra.sample.vaadin.ui;
 
+import com.fiskra.sample.vaadin.repo.UserRepository;
 import com.fiskra.sample.vaadin.ui.design.AppMenuDesign;
 import com.vaadin.spring.annotation.SpringView;
 import com.vaadin.ui.*;
@@ -34,7 +35,7 @@ public class MainView extends CustomComponent implements  View {
 	private final StudentRepository studentRepository;
 	
 	@Autowired
-	public MainView(StudentRepository studentRepository, StudentEditor editor) {
+	public MainView(StudentRepository studentRepository, UserRepository userRepository, StudentEditor editor) {
 		this.studentRepository = studentRepository;
 		this.editor = editor;
 		this.grid = new Grid<>(Student.class);
@@ -50,7 +51,7 @@ public class MainView extends CustomComponent implements  View {
 		VerticalLayout mainLayout = new VerticalLayout(actions, tabSheet);
 		AppMenuView appMenu = new AppMenuView();
 
-		UsersView usersView = new UsersView();
+		UsersView usersView = new UsersView(userRepository);
 
 		appMenu.getContentLayout().addComponent(usersView);
 

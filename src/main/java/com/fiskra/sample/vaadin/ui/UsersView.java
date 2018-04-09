@@ -20,12 +20,13 @@ public class UsersView extends UsersDesign implements View {
     @Autowired
     private  UserRepository users;
 
-    public UsersView() {
+    @Autowired
+    public UsersView(UserRepository users) {
+        this.users = users;
         this.list = new Grid(User.class);
         this.list.setColumns("id", "userName");
         this.list.setItems(users.findAll());
     }
-
 
     @Override
     public void enter(ViewChangeListener.ViewChangeEvent viewChangeEvent) {

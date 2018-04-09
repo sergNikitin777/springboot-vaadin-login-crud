@@ -49,7 +49,7 @@ public class VaadinUI extends UI {
 		
 		StudentEditor studentEditor = new StudentEditor(studentRepository);
 		
-		MainView mainView = new MainView(studentRepository, studentEditor);
+		MainView mainView = new MainView(studentRepository,repo, studentEditor);
 		
 		// build navigator
 		navigator = new Navigator(this, mainLayout);
